@@ -1,5 +1,5 @@
 import type * as http from 'http';
-import type * as ws from 'ws';
+import type { WebSocket, WebSocketServer } from 'ws';
 import { handleProtocols, makeServer, ServerOptions } from '../server';
 import {
   DEPRECATED_GRAPHQL_WS_PROTOCOL,
@@ -8,10 +8,6 @@ import {
   Disposable,
 } from '../common';
 import { limitCloseReason } from '../utils';
-
-// for nicer documentation
-type WebSocket = typeof ws.prototype;
-type WebSocketServer = ws.Server;
 
 /**
  * The extra that will be put in the `Context`.
